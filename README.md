@@ -1,41 +1,43 @@
 Heating RL-DQN Agent
+
 📋 Project Description
 
 An intelligent heating control system optimizing energy consumption in buildings using Deep Q-Network (DQN) and Deep Deterministic Policy Gradient (DDPG) reinforcement learning algorithms. The system manages heat pumps, battery storage, and integrates real-time energy spot prices to maximize efficiency while maintaining thermal comfort.
+
 🎯 Key Features
+- Reinforcement Learning Agents: DQN and DDPG for optimal control strategies
+- Realistic Building Simulation: RC (Resistance-Capacitance) thermal model
+- Energy Optimization: Intelligent heat pump and battery management
+- Real-time Data Integration: Weather data and spot energy pricing
+- Comfort Maintenance: Keeps indoor temperature within optimal ranges (19-23°C)
+- Multi-objective Optimization: Balances energy cost, thermal comfort, and battery efficiency
 
-    Reinforcement Learning Agents: DQN and DDPG for optimal control strategies
+## 🏗️ Project Architecture
 
-    Realistic Building Simulation: RC (Resistance-Capacitance) thermal model
+### Main Files
 
-    Energy Optimization: Intelligent heat pump and battery management
+- **DQN.py** - Deep Q-Network implementation
+- **DDPG.py** - DDPG algorithm implementation  
+- **environment.py** - Building environment simulation (RC thermal model)
+- **main.py** - Main training and evaluation script
+- **train_dqn.py** - DQN-specific training pipeline
+- **analysis.py** - Results analysis and visualization
+- **test_prices.py** - Energy price testing module
+- **vars.py** - Global variables and configuration
+- **utils.py** - Utility functions
+- **agent.py** - Generic RL agent class
+- **LP.py** - Linear Programming baseline
 
-    Real-time Data Integration: Weather data and spot energy pricing
+### Supporting Files
 
-    Comfort Maintenance: Keeps indoor temperature within optimal ranges (19-23°C)
+- **requirements.txt** - Python dependencies
+- **.gitignore** - Git exclusion rules
 
-    Multi-objective Optimization: Balances energy cost, thermal comfort, and battery efficiency
+### Directories
 
-🏗️ Project Architecture
+- **data/output/** - Training results and plots
+- **images/** - Project visualizations
 
-text
-heating-rl-dqn-agent/
-├── DQN.py                  # Deep Q-Network implementation
-├── DDPG.py                 # DDPG algorithm implementation
-├── environment.py          # Building environment simulation (RC thermal model)
-├── main.py                 # Main training and evaluation script
-├── train_dqn.py           # DQN-specific training pipeline
-├── analysis.py            # Results analysis and visualization
-├── test_prices.py         # Energy price testing module
-├── vars.py                # Global variables and configuration
-├── utils.py               # Utility functions
-├── agent.py               # Generic RL agent class
-├── LP.py                  # Linear Programming baseline
-├── requirements.txt       # Python dependencies
-├── .gitignore            # Git exclusion rules
-├── data/                 # Data and outputs directory
-│   └── output/          # Training results and plots
-└── images/              # Project visualizations
 
 🚀 Installation & Setup
 System Requirements
@@ -50,26 +52,26 @@ Quick Start
 
 bash
 # Clone the repository
-git clone https://github.com/Burunciuc07/heating-rl-dqn-agent.git
-cd heating-rl-dqn-agent
+    git clone https://github.com/Burunciuc07/heating-rl-dqn-agent.git
+    cd heating-rl-dqn-agent
 
 # Create virtual environment (recommended)
-python -m venv venv
+    python -m venv venv
 
 # Activate virtual environment
 # On Windows:
-venv\Scripts\activate
+    venv\Scripts\activate
 # On Linux/Mac:
-source venv/bin/activate
+    source venv/bin/activate
 
 # Install dependencies
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 💻 Usage
 1. Training a DQN Agent
-
-bash
-python train_dqn.py
+   
+    bash
+  python train_dqn.py
 
 Adjustable parameters in the script:
 
@@ -82,17 +84,14 @@ Adjustable parameters in the script:
 2. Evaluation and Analysis
 
 bash
-python main.py
+ python main.py
 
 Generates:
 
-    Temperature evolution plots
-
-    Energy consumption analysis
-
-    Agent reward curves
-
-    Policy heatmaps (price vs. temperature)
+- Temperature evolution plots
+- Energy consumption analysis
+- Agent reward curves
+- Policy heatmaps (price vs. temperature)
 
 3. Test on New Data
 
@@ -116,13 +115,10 @@ Simulates a building with:
 
 DQN Agent (DQN.py)
 
-    Neural Network: 3-layer fully connected network
-
-    Experience Replay: 10,000 transition buffer
-
-    Target Network: Soft updates (tau=0.005)
-
-    Exploration: Epsilon-greedy with decay
+- Neural Network: 3-layer fully connected network
+- Experience Replay: 10,000 transition buffer
+- Target Network: Soft updates (tau=0.005)
+- Exploration: Epsilon-greedy with decay
 
 DDPG Agent (DDPG.py)
 
@@ -144,12 +140,12 @@ reward = -energy_cost + comfort_penalty + battery_efficiency_bonus
     Battery Bonus: Efficient charging (buy low) and discharging (sell high)
 
 📊 Results
-Performance vs. Baseline
-Metric	Baseline	DQN Agent	Improvement
-Total Energy Cost	250 RON	187 RON	-25%
-Comfort Time (%)	78%	94%	+16%
-Battery Efficiency	45%	72%	+60%
-Output Files
+| Metric | Baseline | DQN Agent | Improvement |
+|--------|----------|-----------|-------------|
+| Total Energy Cost | 250 RON | 187 RON | **-25%** |
+| Comfort Time (%) | 78% | 94% | **+16%** |
+| Battery Efficiency | 45% | 72% | **+60%** |
+
 
 Results are saved in data/output/:
 
@@ -192,22 +188,17 @@ LEARNING_RATE = 0.001    # Neural network learning rate
 🔄 Workflow
 
     Initialize Environment: RC thermal model with random initial conditions
-
     Agent Interaction: Agent observes state → selects action → receives reward
-
     Learning: Experience replay buffer updates network weights
-
     Evaluation: Test on held-out time periods
-
     Analysis: Generate performance visualizations
 
 📚 References
 
     Mnih, V. et al. (2015). "Human-level control through deep reinforcement learning." Nature, 529(7587), 529-533.
-
     Lillicrap, T. et al. (2015). "Continuous control with deep reinforcement learning." ICLR.
-
     Zhang, Z. et al. (2019). "Building HVAC control with reinforcement learning." Energy & Buildings, 208, 109650.
+    Zhang et al. (2023) . "Fusing domain knowledge and reinforcement learning for home integrated demand response online optimization"
 
 🙏 Acknowledgments
 
@@ -224,6 +215,7 @@ LEARNING_RATE = 0.001    # Neural network learning rate
 📝 License
 
 MIT License - See LICENSE file for details.
+
 👤 Author
 
 Burunciuc07
