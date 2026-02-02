@@ -4,6 +4,8 @@ Heating RL-DQN Agent
 
 An intelligent heating control system optimizing energy consumption in buildings using Deep Q-Network (DQN) and Deep Deterministic Policy Gradient (DDPG) reinforcement learning algorithms. The system manages heat pumps, battery storage, and integrates real-time energy spot prices to maximize efficiency while maintaining thermal comfort.
 
+For more details you can check the paper, see [IAS.pdf](IAS.pdf).
+
 🎯 Key Features
 - Reinforcement Learning Agents: DQN and DDPG for optimal control strategies
 - Realistic Building Simulation: RC (Resistance-Capacitance) thermal model
