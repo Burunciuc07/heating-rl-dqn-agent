@@ -216,7 +216,7 @@ LEARNING_RATE = 0.001    # Neural network learning rate
 
 📝 License
 
-MIT License - See LICENSE file for details.
+MIT License - See [LICENCE](https://opensource.org/license/MIT) file for details.
 
 👤 Author
 
